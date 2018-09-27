@@ -8,13 +8,15 @@
 import argparse
 import json
 import sys
-sys.path.insert(0, './coco-caption') # Hack to allow the import of pycocoeval
+# sys.path.insert(0, './coco-caption') # Hack to allow the import of pycocoeval
+sys.path.insert(0, '/private/home/luoweizhou/subsystem/BottomUpAttnVid/tools/densevid_eval/coco-caption')
 
 from pycocoevalcap.tokenizer.ptbtokenizer import PTBTokenizer
 from pycocoevalcap.bleu.bleu import Bleu
 from pycocoevalcap.meteor.meteor import Meteor
 from pycocoevalcap.rouge.rouge import Rouge
 from pycocoevalcap.cider.cider import Cider
+from pycocoevalcap.spice.spice import Spice
 from sets import Set
 import numpy as np
 
@@ -50,7 +52,8 @@ class ANETcaptions(object):
                 (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
                 (Meteor(),"METEOR"),
                 (Rouge(), "ROUGE_L"),
-                (Cider(), "CIDEr")
+                (Cider('corpus'), "CIDEr"),
+                (Spice(), "SPICE")
             ]
         else:
             self.scorers = [(Meteor(), "METEOR")]
