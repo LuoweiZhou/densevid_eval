@@ -1,4 +1,5 @@
 # Dense Captioning Events in Video - Evaluation Code
+This is a forked repo from the official 2017 [densevid_eval](https://github.com/ranjaykrishna/densevid_eval/tree/b8d90707984bf9c99454ba82b089006f14fb62b3). You can also find the latest official 2018 repo [here](https://github.com/ranjaykrishna/densevid_eval) and the one with SPICE support [here](https://github.com/LuoweiZhou/densevid_eval_spice).
 
 ## Usage
 First, clone this repository and make sure that all the submodules are also cloned properly.
